@@ -1,25 +1,25 @@
 using System.Collections.Generic;
-using Xunit;
+using NUnit.Framework;
 
 namespace TDDMicroExercises.LeaderBoard.Tests
 {
     public class LeaderboardTest
     {
-        [Fact]
+        [Test]
         public void ShouldSumThePoints()
         {
             var results = TestData.SampleLeaderboard1.DriverResults();
             Assert.True(results.ContainsKey("Lewis Hamilton"));
-            Assert.Equal(18 + 18 + 25, results["Lewis Hamilton"]);
+            Assert.AreEqual(18 + 18 + 25, results["Lewis Hamilton"]);
         }
 
-        [Fact]
+        [Test]
         public void ShouldFindTheWinner()
         {
-            Assert.Equal("Lewis Hamilton", TestData.SampleLeaderboard1.DriverRankings()[0]);
+            Assert.AreEqual("Lewis Hamilton", TestData.SampleLeaderboard1.DriverRankings()[0]);
         }
 
-        [Fact]
+        [Test]
         public void ShouldKeepAllDriversWhenSamePoints()
         {
             var winDriver1 = new Race("Australian Grand Prix", TestData.Driver1, TestData.Driver2, TestData.Driver3);
@@ -28,7 +28,7 @@ namespace TDDMicroExercises.LeaderBoard.Tests
 
             var rankings = exEquoLeaderBoard.DriverRankings();
 
-            Assert.Equal(
+            Assert.AreEqual(
                 new List<string> { TestData.Driver2.Name, TestData.Driver1.Name, TestData.Driver3.Name },
                 rankings);
         }

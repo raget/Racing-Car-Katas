@@ -1,10 +1,10 @@
-using Xunit;
+using NUnit.Framework;
 
 namespace TDDMicroExercises.TirePressureMonitoringSystem
 {
     public class AlarmTest
     {
-        [Fact]
+        [Test]
         public void Foo()
         {
             Alarm alarm = new Alarm();

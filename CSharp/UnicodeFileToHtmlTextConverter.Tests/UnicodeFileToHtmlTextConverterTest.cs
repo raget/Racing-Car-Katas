@@ -1,14 +1,15 @@
 
-using Xunit;
+using NUnit.Framework;
+
 namespace TDDMicroExercises.UnicodeFileToHtmlTextConverter
 {
     public class HikerTest
     {
-        [Fact]
+        [Test]
         public void Foobar()
         {
             UnicodeFileToHtmlTextConverter converter = new UnicodeFileToHtmlTextConverter("foobar.txt");
-            Assert.Equal("fixme", converter.GetFilename());
+            Assert.AreEqual("fixme", converter.GetFilename());
         }
     }
 }
