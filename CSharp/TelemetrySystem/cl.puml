@@ -1,0 +1,19 @@
+﻿@startuml
+'https://plantuml.com/class-diagram
+
+class TelemetryClient {
+    void Connect()
+    void Disconnect()
+    void Send(string message)
+    string Receive()
+}
+
+class TelemetryDiagnosticControl {
+    string DiagnosticInfo { get; set; }
+    void CheckTransmission()
+}
+
+
+TelemetryDiagnosticControl --> TelemetryClient
+
+@enduml
